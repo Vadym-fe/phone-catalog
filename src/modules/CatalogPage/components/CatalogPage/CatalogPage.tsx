@@ -77,8 +77,12 @@ export const CatalogPage: React.FC<Props> = ({ products, category, title }) => {
 
   const query = searchParams.get('query')?.trim().toLowerCase() ?? '';
 
+  const queryWords = query.split(/\s+/).filter(Boolean);
+
   const productsMatchingQuery = products.filter(product => {
-    return product.name.toLowerCase().includes(query);
+    const productName = product.name.toLowerCase();
+
+    return queryWords.every(word => productName.includes(word));
   });
 
   const [currentPage, setCurrentPage] = useState(pageFromUrl);

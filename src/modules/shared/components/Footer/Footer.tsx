@@ -29,14 +29,19 @@ export const Footer = () => {
           </li>
           <li className={styles['footer__nav-item']}>
             <a
-              href="/mailto:vadimivanskij9@gmail.com"
+              href="mailto:vadimivanskij9@gmail.com"
               className={styles['footer__nav-link']}
             >
               contacts
             </a>
           </li>
           <li className={styles['footer__nav-item']}>
-            <span className={styles['footer__nav-link']}>rights</span>
+            <a
+              href="https://github.com/Vadym-fe/phone-catalog/blob/main/LICENSE"
+              className={styles['footer__nav-link']}
+            >
+              rights
+            </a>
           </li>
         </ul>
       </div>

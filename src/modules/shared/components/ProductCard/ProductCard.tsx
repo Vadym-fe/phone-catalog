@@ -25,6 +25,10 @@ export const ProductCard: React.FC<Props> = ({
     favouriteProduct => favouriteProduct.id === product.id,
   );
 
+  const handleProductClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div
       className={`${styles.product} ${isFullWidth ? styles['product--catalog'] : ''}`}
@@ -33,12 +37,17 @@ export const ProductCard: React.FC<Props> = ({
         <Link
           to={`/product/${product.itemId}`}
           className={styles.product__link}
+          onClick={handleProductClick}
         >
           <img src={product.image} alt="" className={styles.product__img} />
         </Link>
       </div>
 
-      <Link to={`/product/${product.itemId}`} className={styles.product__link}>
+      <Link
+        to={`/product/${product.itemId}`}
+        className={styles.product__link}
+        onClick={handleProductClick}
+      >
         <p className={styles.product__title}>{product.name}</p>
       </Link>
 

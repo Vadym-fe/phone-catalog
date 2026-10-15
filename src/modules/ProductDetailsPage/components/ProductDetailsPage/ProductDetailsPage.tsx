@@ -108,7 +108,7 @@ export const ProductDetailsPage = () => {
     );
   }, [productId]);
 
-  return isLoading || isDetailsLoading ? (
+  return isLoading || (isDetailsLoading && !product) ? (
     <Loader />
   ) : (
     <div className={`${styles.details} container`}>
@@ -162,7 +162,7 @@ export const ProductDetailsPage = () => {
           <div className={styles['back-to__prev-page']}>
             <button
               className={styles['back-to__prev-button']}
-              onClick={() => navigate(-1)}
+              onClick={() => navigate(`/${product.category}`)}
             >
               <img
                 src="./img/arrLeft.png"

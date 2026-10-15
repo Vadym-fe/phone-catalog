@@ -155,10 +155,16 @@
 }
 
 .pagination {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  padding-block: 16px;
   gap: 16px;
+  background-color: #fff;
 
   &__button {
     width: 32px;
