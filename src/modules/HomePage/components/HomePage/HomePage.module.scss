@@ -51,11 +51,17 @@
       transition: transform 0.3s;
     }
 
-    &-img {
-      width: 100%;
-      min-width: 100%;
+    &-link {
+      display: block;
+      flex: 0 0 100%;
+      min-width: 0;
       height: 100%;
-      flex-shrink: 0;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }

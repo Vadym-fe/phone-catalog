@@ -1,6 +1,4 @@
 .nav {
-
-
   &__list {
     list-style: none;
     display: flex;
@@ -64,18 +62,18 @@
 
 @media (max-width: 640px) {
   .nav {
-
     &__list {
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      gap: 16px;
       margin: 0;
       padding: 0;
     }
 
     &__link {
-      height: 48px;
+      height: 27px;
       width: 100%;
+      justify-content: center;
     }
   }
 }

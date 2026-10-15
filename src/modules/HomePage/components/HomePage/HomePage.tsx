@@ -7,9 +7,21 @@ import { Loader } from '../../../shared/components/Loader/Loader';
 import { useProductsContext } from '../../../../hook/useProductsContext';
 
 const BANNERS = [
-  './img/banner-phones.jpg',
-  './img/banner-tablets.jpg',
-  './img/banner-accessories.jpg',
+  {
+    image: './img/banner-phones.jpg',
+    to: '/phones',
+    label: 'Shop phones',
+  },
+  {
+    image: './img/banner-tablets.jpg',
+    to: '/tablets',
+    label: 'Shop tablets',
+  },
+  {
+    image: './img/banner-accessories.jpg',
+    to: '/accessories',
+    label: 'Shop accessories',
+  },
 ];
 
 export const HomePage = () => {
@@ -77,16 +89,20 @@ export const HomePage = () => {
             className={styles['main__slider-track']}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {BANNERS.map((banner, index) => {
-              return (
+            {BANNERS.map(banner => (
+              <Link
+                key={banner.to}
+                to={banner.to}
+                className={styles['main__slider-link']}
+                aria-label={banner.label}
+              >
                 <img
-                  key={index}
-                  src={banner}
+                  src={banner.image}
                   alt=""
                   className={styles['main__slider-img']}
                 />
-              );
-            })}
+              </Link>
+            ))}
           </div>
         </div>
 
